@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import { InputText } from "primereact/inputtext";
 import logo from "./logo.svg";
+import { Layout } from "./layout";
 
 //this must have a return
 export const ReactFunction: React.FC = () => {
@@ -40,9 +41,12 @@ function App() {
     //   </header>
     // </div>
     <div>
-      <Image/>
-      <ReactFunction />
-      <InputText value={value1} onChange={(e) => setValue1(e.target.value)} />
+      <Layout>
+        <Image />
+        <ReactFunction />
+        <InputText value={value1} onChange={(e) => setValue1(e.target.value)} />
+      </Layout>
+      
     </div>
   );
 }
