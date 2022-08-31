@@ -1,17 +1,23 @@
 import React from "react";
 import "./App.css";
 import { InputText } from "primereact/inputtext";
+import logo from "./logo.svg";
 
-export const Abc: React.FC = () => {
-  console.log('hi');
+//this must have a return
+export const ReactFunction: React.FC = () => {
+  console.log("hi");
   return <div>hi : Abc</div>;
 };
 
-export function Def() {
-  console.log('hi');
+// this can return void
+export function DefaltFunction() {
+  console.log("hi");
   // return <div>hi : Def</div>;
 }
 
+export const Image: React.FC = () => {
+  return <img src={logo} className="App-logo" alt="logo" />;
+};
 
 function App() {
   const [value1, setValue1] = React.useState("");
@@ -34,7 +40,8 @@ function App() {
     //   </header>
     // </div>
     <div>
-      <Abc/>
+      <Image/>
+      <ReactFunction />
       <InputText value={value1} onChange={(e) => setValue1(e.target.value)} />
     </div>
   );
